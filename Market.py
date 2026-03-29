@@ -69,6 +69,7 @@ def lihat():
              print("Gakada Produk Nya! Masukkin Dulu Boss!!...")
              
          print("====Produk–Produk=====\n")
+         total = 0
          for p in inventory:
              total += p["H"]*p["S"]
              print(f"Produk : {p['P']}\n Harga : Rp. {p['H']:,}\n Stok : {p['S']} Buah \n -------------")
