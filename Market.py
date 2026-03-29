@@ -48,7 +48,7 @@ def jual(produk,jual):
                           else:
                                 p["S"] -= jual
                                 return "Produk berhasil dijual!"
-                  return "Gak Ada Tuh Produk Nya"     '' 
+                  return "Gak Ada Tuh Produk Nya"    
 #Edit Harga
 def edit(produk,harga):
     if not isinstance(produk,str) or not isinstance(harga,int):
@@ -70,7 +70,7 @@ def lihat():
              
          print("====Produk–Produk=====\n")
          for p in inventory:
-             total = p["H"]*p["S"]
+             total += p["H"]*p["S"]
              print(f"Produk : {p['P']}\n Harga : Rp. {p['H']:,}\n Stok : {p['S']} Buah \n -------------")
              
          print(f"Total Aset : Rp{total}")
