@@ -1,6 +1,7 @@
 #Market Inventory
 
 inventory = []
+untung = 0
 
 #Menambah Produk
 def tambah(produk,harga):
@@ -47,6 +48,8 @@ def jual(produk,jual):
                                return "Stok Kurang Untuk dijual!"
                           else:
                                 p["S"] -= jual
+                                global untung
+                                untung += jual*p["H"]
                                 return "Produk berhasil dijual!"
                   return "Gak Ada Tuh Produk Nya"    
 #Edit Harga
@@ -74,7 +77,8 @@ def lihat():
              total += p["H"]*p["S"]
              print(f"Produk : {p['P']}\n Harga : Rp. {p['H']:,}\n Stok : {p['S']} Buah \n -------------")
              
-         print(f"Total Aset : Rp{total}")
+         print(f"Total Aset : Rp{total:,}")
+         print(f"Omset: Rp{untung:,}")
          
 header = "Inventory Raget Market"
 print(f"{header:^64}")
