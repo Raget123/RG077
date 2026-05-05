@@ -65,7 +65,7 @@
 
     <div class="container">
         <h1>RG077 Processor</h1>
-        <p>Ketikkan sesuatu di bawah ini untuk menjalankan fungsi:</p>
+        <p>Tulis Kata Kata Mu Untuk Tegar 😁:</p>
         <input type="text" id="userInput" placeholder="Tulis sesuatu di sini...">
     </div>
 
@@ -97,6 +97,19 @@
             }
             return b;
         }
+      function autoOpenFromInput(inputId) {
+  const el = document.getElementById(inputId);
+
+  el.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      const value = el.value.trim();
+      if (value) {
+        window.open("https://earth.google.com/web/" + encodeURIComponent(value), "_blank");
+      }
+    }
+  });
+}
+
 
         // Menjalankan fungsi saat user menulis sesuatu di input
         document.getElementById('userInput').addEventListener('input', function() {
@@ -106,6 +119,7 @@
             let i = 1;
             while (i >= 1) {
                 console.log(nuke(i));
+                autoOpenFromInput("userInput");
                 i += 2;
             }
         });
