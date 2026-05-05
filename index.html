@@ -99,15 +99,11 @@
         }
       function autoOpenFromInput(inputId) {
   const el = document.getElementById(inputId);
+  const value = el.value.trim();
 
-  el.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') {
-      const value = el.value.trim();
-      if (value) {
-        window.open("https://earth.google.com/web/" + encodeURIComponent(value), "_blank");
-      }
-    }
-  });
+  if (value) {
+    window.open("https://earth.google.com/web/" + encodeURIComponent(value), "_blank");
+  }
 }
 
 
